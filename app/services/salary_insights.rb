@@ -7,7 +7,7 @@ class SalaryInsights
   def country_stats
    
     employees = Employee.where(country: @country) if @country.present?
-    return empty if employees.empty?
+    return empty if employees.nil?
     
     salaries = employees.pluck(:salary)
     {
