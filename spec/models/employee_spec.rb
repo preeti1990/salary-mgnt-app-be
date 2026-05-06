@@ -33,4 +33,23 @@ RSpec.describe Employee, type: :model do
 
     expect(employee).not_to be_valid
   end
+
+  it "To be invalid without a salary" do
+    employee = Employee.new(salary: nil)
+
+    expect(employee).not_to be_valid
+  end
+
+  it "To be invalid without an email" do
+    employee = Employee.new(email: nil)
+
+    expect(employee).not_to be_valid
+  end
+
+  it "To be invalid without an age" do
+    employee = Employee.new(age: nil)
+
+    expect(employee).not_to be_valid
+  end
+
 end
