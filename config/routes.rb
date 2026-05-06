@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   resources :employees
+  resources :insights do
+    collection do
+      get "job_title_stats"
+    end
+  end
 end
