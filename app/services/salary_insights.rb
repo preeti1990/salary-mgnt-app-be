@@ -1,14 +1,16 @@
 class SalaryInsights
+  attr_accessor :active_employees
 
   def initialize(country: nil)
+    @active_employees = active_employees
     @country = country
   end
 
   def country_stats
-   
-    employees = Employee.where(country: @country) if @country.present?
-    return empty if employees.nil?
-    
+    return empty if @active_employees.nil?
+    employees = @active_employees.where(country: @country) if @country.present?
+    return empty if employees.count == 0
+
     salaries = employees.pluck(:salary)
     {
       min: salaries.min,
@@ -35,5 +37,9 @@ class SalaryInsights
       max: 0,
       avg: 0
     }
+  end
+
+  def active_employees
+    @active_employees = Employee.where(active: true)
   end
 end

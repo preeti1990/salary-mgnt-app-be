@@ -17,4 +17,14 @@ RSpec.describe "SalaryInsights", type: :service do
       expect(result[:avg]).to eq(55000)
     end
 
+    it "returns empty stats if employees are not active" do
+      
+    
+
+      Employee.update_all(active: false)
+      result = SalaryInsights.new(country: "India").country_stats
+      expect(result[:min]).to eq(0)
+      expect(result[:max]).to eq(0)
+      expect(result[:avg]).to eq(0)
+    end
 end

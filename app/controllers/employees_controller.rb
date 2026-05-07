@@ -5,7 +5,7 @@ class EmployeesController < ApplicationController
   end
 
   def index
-    emps = Employee.first(10)
+    emps = Employee.where(country: params[:country])
     render json: emps, status: :ok
   end
 

@@ -2,9 +2,9 @@ require "rails_helper"
 RSpec.describe "Insights", type: :request do
   describe "GET /insights/country_stats" do
     before do
-      Employee.create!(full_name: "Preeti Gupta", job_title: "Manager", country: "India", salary: 50000, email: "prtjan6990@gmail.com", phone_number: "1234567890", age: "35")
-      Employee.create!(full_name: "Richa Gupta", job_title: "Manager", country: "India", salary: 60000, email: "richamathur@gmail.com", phone_number: "1234567895", age: "35")
-      Employee.create!(full_name: "Amit Sharma", job_title: "Developer", country: "India", salary: 40000, email: "amitsharma@gmail.com", phone_number: "1234567896", age: "30")
+      Employee.create!(full_name: "Preeti Gupta", job_title: "Manager", country: "India", salary: 50000, email: "prtjan6990@gmail.com", phone_number: "1234567890", age: "35", active: true)
+      Employee.create!(full_name: "Richa Gupta", job_title: "Manager", country: "India", salary: 60000, email: "richamathur@gmail.com", phone_number: "1234567895", age: "35", active: true)
+      Employee.create!(full_name: "Amit Sharma", job_title: "Developer", country: "India", salary: 40000, email: "amitsharma@gmail.com", phone_number: "1234567896", age: "30", active: true)
 
     end
 
